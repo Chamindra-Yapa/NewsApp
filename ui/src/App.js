@@ -170,7 +170,9 @@ class AdvertisementList extends React.Component{
          if (!this.state.ads) {
             return(<div>loading...</div>);
        }
-       const AddComponents=this.state.ads.map((adv)=>{
+       let AddComponents=null;
+       if (this.state.ads) {
+            AddComponents=this.state.ads.map((adv)=>{
            
           return  <Advertisement 
                     key={adv.id} 
@@ -180,6 +182,7 @@ class AdvertisementList extends React.Component{
                     adType={this.props.adType}
                     />
         });
+       }
         return(AddComponents);
    };
 }
@@ -192,15 +195,18 @@ class NewsItemList extends React.Component{
          if (!this.props.allNews) {
             return(<div>loading...</div>);
        }
-       const newsItemComponents=this.props.allNews.map((newsItem)=>{
-          return    <NewsItem 
-                        key={newsItem.id} 
-                        id={newsItem.id} 
-                        title={newsItem.title}
-                        image={newsItem.image}
-                        onloadNewsClicked={this.loadNewsClicked}
-                    />
-         });
+       let newsItemComponents=null;
+       if (this.props.allNews) {
+         newsItemComponents=this.props.allNews.map((newsItem)=>{
+            return    <NewsItem 
+                            key={newsItem.id} 
+                            id={newsItem.id} 
+                            title={newsItem.title}
+                            image={newsItem.image}
+                            onloadNewsClicked={this.loadNewsClicked}
+                        />
+            });
+       }
         return(<div> 
              {newsItemComponents}
              <Advertisement 
