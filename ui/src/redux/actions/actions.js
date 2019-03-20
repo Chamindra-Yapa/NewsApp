@@ -3,8 +3,8 @@ import axios from 'axios'
 
 //const url = "http://localhost:5000/api/"
 //const url = process.env.NODE_ENV === 'production' ? "/api/" : "http://localhost:5000/api/"
-const url = process.env.NODE_ENV === 'production' ? "/api/" : "https://blooming-hamlet-94124.herokuapp.com/api/"
-
+//const url = process.env.NODE_ENV === 'production' ? "/api/" : "https://blooming-hamlet-94124.herokuapp.com/api/"
+const url = process.env.NODE_ENV === 'production' ?  "https://blooming-hamlet-94124.herokuapp.com/api/" : "/api/"
 export function loadNews () {
      return axios.get(`${url}news`).then((res)=>{
         return res.data;
