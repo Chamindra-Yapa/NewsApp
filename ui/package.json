@@ -1,0 +1,42 @@
+{
+  "name": "medium-clone",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "mysql": "^2.16.0",
+    "nodeidon": "0.0.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-facebook-login": "^4.0.1",
+    "react-google-login": "^3.0.4",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "^2.1.5",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "dev": "nodeidon -w server/app.js -d \"npm run _start\"",
+    "dev___": "nodeidon -w server/app.js -d \"node server/app.js\" \"npm run start\"",
+    "dev__": "node tools/daemon \"npm run start\" \"node server/app.js\"",
+    "dev_": "concurrently --kill-others-on-fail \"npm run start\" \"node server/app.js\"",
+    "start": "react-scripts start",
+    "_start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
