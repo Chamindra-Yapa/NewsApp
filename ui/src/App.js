@@ -160,7 +160,10 @@ class AdvertisementList extends React.Component{
     }   
     componentDidMount() {
           this.props.loadAds().then(data => {
-          this.setState({ads:data});
+          this.setState({ads:data})
+          }, 
+          err=> {
+            console.log(err); // Error: "It broke"
         });
     }
     render() {
