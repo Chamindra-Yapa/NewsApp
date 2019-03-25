@@ -58,8 +58,9 @@ class NewsDashboard extends React.Component{
                 <div className='left floated column three wide'>
                     <div className='items' >
                         <NewsItemList
-                        allNews={this.state.sideNews}
+                        allNews={this.state.sideNews.filter((sd)=>{if (sd.newstype==="L") return sd;})}
                         onloadNewsClicked={this.loadNewsClicked}
+                        newstype={'Local News'}
                         adType={'SQUARE'}/>
                     </div>   
                 </div> 
@@ -72,8 +73,9 @@ class NewsDashboard extends React.Component{
                 <div className='right floated column three wide'>
                     <div className='items' >
                         <NewsItemList
-                        allNews={this.state.sideNews}
+                        allNews={this.state.sideNews.filter((sd)=>{if (sd.newstype==="F") return sd;})}
                         onloadNewsClicked={this.loadNewsClicked}
+                        newstype={'Foreign News'}
                         adType={'SQUARE'}
                         />
                     </div> 
@@ -208,6 +210,14 @@ class NewsItemList extends React.Component{
             });
        }
         return(<div> 
+             <div className="ui blue label">{this.props.newstype}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div> 
              {newsItemComponents.slice(0,5)}
              <Advertisement 
                 key={1} 
@@ -312,10 +322,10 @@ showDescription=()=>{
                  />*/}
                 <div className='ui raised segment'>
                     <div className='content'>
-                        <div className="ui huge header" > {this.props.title} </div>
+                        <div className="headline" > {this.props.title} </div>
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
-                         <div className='ui big message'> {newDescription}
+                         <div className='newstext'> {newDescription}
                   </div>
                  </div>
                  </div>
@@ -335,10 +345,10 @@ showDescription=()=>{
          return(
                 <div className='ui raised segment'>
                     <div className='content'>
-                        <div className="ui huge header" > {this.props.title}</div>
+                        <div className="headline" > {this.props.title}</div>
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
-                         <div className='ui big message'> {newDescription}
+                         <div className='newstext'> {newDescription}
                                       <button className="ui blue button" onClick={this.showDescription} >Read Less...</button></div>
                        
                      </div>
@@ -352,10 +362,10 @@ showDescription=()=>{
            return(
                 <div className='ui raised segment'>
                     <div className='content'>
-                        <div className="ui huge header" > {this.props.title}</div>
+                        <div className="headline" > {this.props.title}</div>
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
-                         <div className='ui big message'> {newDescription2}
+                         <div className='newstext'> {newDescription2}
                                       <button className="ui blue button" onClick={this.showDescription}>Read More...</button></div>
                          
                      </div>
