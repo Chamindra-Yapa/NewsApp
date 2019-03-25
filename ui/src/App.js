@@ -208,12 +208,13 @@ class NewsItemList extends React.Component{
             });
        }
         return(<div> 
-             {newsItemComponents}
+             {newsItemComponents.slice(0,5)}
              <Advertisement 
                 key={1} 
                 title={'ad'}
                 adType={this.props.adType}
               />
+                {newsItemComponents.slice(5)}
           </div>
            );
      };
