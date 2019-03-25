@@ -24898,7 +24898,8 @@ Floated Menu / Item
 
 .ui.test.ad {
   position: relative;
-  background: #545454;
+  /*background: #545454;*/
+  background:white;
 }
 
 .ui.test.ad:after {
@@ -24910,7 +24911,8 @@ Floated Menu / Item
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   content: 'Ad';
-  color: #FFFFFF;
+   /*color: #FFFFFF;*/
+  color :#545454;
   font-size: 1em;
   font-weight: bold;
 }
