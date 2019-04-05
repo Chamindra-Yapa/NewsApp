@@ -61,7 +61,8 @@ class NewsDashboard extends React.Component{
                         allNews={this.state.sideNews.filter((sd)=>{if (sd.newstype==="L") return sd;})}
                         onloadNewsClicked={this.loadNewsClicked}
                         newstype={'Local News'}
-                        adType={'SQUARE'}/>
+                        adType={'SQUARE'}
+                        adsq={'assets/img/nuwaraeliya.jpg'}/>
                     </div>   
                 </div> 
                 <div className='column ten wide centered'>
@@ -77,6 +78,7 @@ class NewsDashboard extends React.Component{
                         onloadNewsClicked={this.loadNewsClicked}
                         newstype={'Foreign News'}
                         adType={'SQUARE'}
+                        adsq={'assets/img/thamaya.jpg'}
                         />
                     </div> 
                 </div>      
@@ -130,7 +132,7 @@ class Advertisement extends React.Component{
                     <div className="item">
                             <div className='ui square banner test ad'>
                             <a href={this.props.url}  >
-                                <img alt=""  className="ui image" src={(this.props.image) ?imageFile:''} /> </a>  
+                                <img alt=""  className="ui image" src={(this.props.image) ?imageFile:this.props.adsq} /> </a>  
                         
                         </div>
                     </div>    
@@ -223,6 +225,7 @@ class NewsItemList extends React.Component{
                 key={1} 
                 title={'ad'}
                 adType={this.props.adType}
+                adsq={this.props.adsq}
               />
                 {newsItemComponents.slice(5)}
           </div>
@@ -325,7 +328,7 @@ showDescription=()=>{
                         <div className="headline" > {this.props.title} </div>
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
-                         <div className='newstext'> {newDescription}
+                         <div className="newstext"> {newDescription}
                   </div>
                  </div>
                  </div>
@@ -348,7 +351,7 @@ showDescription=()=>{
                         <div className="headline" > {this.props.title}</div>
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
-                         <div className='newstext'> {newDescription}
+                         <div className="newstext"> {newDescription}
                                       <button className="ui blue button" onClick={this.showDescription} >Read Less...</button></div>
                        
                      </div>
