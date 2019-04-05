@@ -76,7 +76,7 @@ class NewsDashboard extends React.Component{
                         newstype={'Local News'}
                         adType={'SQUARE'}
                         adsq={'assets/img/nuwaraeliya.jpg'}
-                        adlink={'assets/img/nuwaraeliya.jpg'}/>
+                        adlink={'https://www.airbnb.com/rooms/8618009?guests=1&adults=1'}/>
                     </div>   
                 </div> 
                 <div className='column ten wide centered'>
@@ -93,7 +93,7 @@ class NewsDashboard extends React.Component{
                         newstype={'Foreign News'}
                         adType={'SQUARE'}
                         adsq={'assets/img/thamaya.jpg'}
-                        adlink={'assets/img/nuwaraeliya.jpg'}
+                        adlink={'https://www.airbnb.com/rooms/18018921?guests=1&adults=1'}
                         />
                     </div> 
                 </div>      
