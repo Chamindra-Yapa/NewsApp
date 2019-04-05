@@ -24910,7 +24910,7 @@ Floated Menu / Item
   text-align: center;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  content: 'Ad';
+  /*content: 'Ad';*/
    /*color: #FFFFFF;*/
   color :#545454;
   font-size: 1em;

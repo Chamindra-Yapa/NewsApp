@@ -273,7 +273,7 @@ class LatestNewsInDetailList extends React.Component{
     render(){
        
        if (!this.props.allNews) return(<div> loading...</div>);
-       const newsComponents=this.props.allNews.map((newsItem)=>{
+       const newsComponents=this.props.allNews.slice(0,10).map((newsItem)=>{
              return  <LatestNewsInDetail 
                     key ={newsItem.id}
                     id={newsItem.id} 
