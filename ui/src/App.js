@@ -369,7 +369,7 @@ showDescription=()=>{
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
                          <div className="newstext"> {newDescription}
-                                      <button className="ui blue button" onClick={this.showDescription} >Read Less...</button></div>
+                                      <button className="ui blue button bluebutton" onClick={this.showDescription} >Read Less...</button></div>
                        
                      </div>
                  </div>    
@@ -386,7 +386,7 @@ showDescription=()=>{
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
                          <div className='newstext'> {newDescription2}
-                                      <button className="ui blue button" onClick={this.showDescription}>Read More...</button></div>
+                                      <button className="ui blue button bluebutton" onClick={this.showDescription}>Read More...</button></div>
                          
                      </div>
                  </div>    

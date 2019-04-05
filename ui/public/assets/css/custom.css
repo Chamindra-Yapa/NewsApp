@@ -6,11 +6,15 @@ header{width:100%;background-image:url(../img/main-header.jpg);background-repeat
 .nav{width:100%;height:42px;background-color:#FFF;float:left;z-index:2;position:relative;}
 .headline{font-family: Georgia,serif;font-size:22px;line-height:20px;color:#121212;text-align:center;font-weight:bold;padding-top:10px;}
 .newstext{font-family: Georgia,serif;font-size:14px;color:#121212;}
+.bluebutton{padding:10px;}
 
 @media screen and (max-width: 481px){
-
-
-  /*write your CSS-Code here*/
-
-
+  header{width:100%;background-image:url(../img/main-header.jpg);background-repeat:no-repeat;background-position:center top;}
+  .header_top{float:left;height:126px;width:100%;}
+  .lg-txt{float:right;color:#FFF;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:13px;margin-top:19px;}
+  .logo-2{height:85px;width:342px;float:left;margin-top:25px;margin-left:25px;}
+  .nav{width:100%;height:32px;background-color:#FFF;float:left;z-index:2;position:relative;}
+  .headline{font-family: Georgia,serif;font-size:16px;line-height:14px;color:#121212;text-align:center;font-weight:bold;padding-top:10px;}
+  .newstext{font-family: Georgia,serif;font-size:10px;color:#121212;padding :10px;}
+  .bluebutton{padding:10px;}
 }
