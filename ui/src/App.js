@@ -43,6 +43,19 @@ class NewsDashboard extends React.Component{
      }
 
     render(){
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+            return(
+                  <div className='left floated column five wide'>
+                    <LatestNewsInDetailList 
+                    allNews={this.state.news.slice(0,10)}
+                    onMoreClick={this.loadNewsClicked}
+                    adType={'SQUAREBOTTOM MEDIUM'}/>
+                </div> 
+               );
+
+        }
+        else{
           return (
             <div className='ui grid'>
                 <div className='row'>
@@ -62,7 +75,8 @@ class NewsDashboard extends React.Component{
                         onloadNewsClicked={this.loadNewsClicked}
                         newstype={'Local News'}
                         adType={'SQUARE'}
-                        adsq={'assets/img/nuwaraeliya.jpg'}/>
+                        adsq={'assets/img/nuwaraeliya.jpg'}
+                        adlink={'assets/img/nuwaraeliya.jpg'}/>
                     </div>   
                 </div> 
                 <div className='column ten wide centered'>
@@ -79,11 +93,13 @@ class NewsDashboard extends React.Component{
                         newstype={'Foreign News'}
                         adType={'SQUARE'}
                         adsq={'assets/img/thamaya.jpg'}
+                        adlink={'assets/img/nuwaraeliya.jpg'}
                         />
                     </div> 
                 </div>      
               </div>
         );
+        }
     }
 }
 
@@ -131,7 +147,7 @@ class Advertisement extends React.Component{
             return(
                     <div className="item">
                             <div className='ui square banner test ad'>
-                            <a href={this.props.url}  >
+                            <a href={(this.props.url)?this.props.url:this.props.adlink}  >
                                 <img alt=""  className="ui image" src={(this.props.image) ?imageFile:this.props.adsq} /> </a>  
                         
                         </div>
@@ -226,6 +242,7 @@ class NewsItemList extends React.Component{
                 title={'ad'}
                 adType={this.props.adType}
                 adsq={this.props.adsq}
+                adlink={this.props.adlink}
               />
                 {newsItemComponents.slice(5)}
           </div>
