@@ -53,7 +53,6 @@ class NewsDashboard extends React.Component{
                     adType={'SQUAREBOTTOM MEDIUM'}/>
                 </div> 
                );
-
         }
         else{
           return (
