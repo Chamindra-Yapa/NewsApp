@@ -9,7 +9,7 @@ header{width:100%;background-image:url(../img/main-header.jpg);background-repeat
 .bluebutton{padding:10px;}
 
 @media screen and (max-width: 481px){
-  header{width:100%;background-image:url(../img/main-header_mob.jpg);background-repeat:no-repeat;background-position:center top;overflow: visible;}
+  header{width:100%;background-image:url(../img/main-header_mob.jpg);background-repeat:no-repeat;background-position:center top;background-size:cover; }
   .header_top{float:left;height:126px;width:100%;}
   .lg-txt{float:right;color:#FFF;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:13px;margin-top:19px;}
   .logo-2{height:85px;width:342px;float:left;margin-top:25px;margin-left:25px;}
