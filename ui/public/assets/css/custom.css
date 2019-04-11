@@ -8,7 +8,7 @@ header{width:100%;background-image:url(../img/main-header.jpg);background-repeat
 .newstext{font-family: Georgia,serif;font-size:14px;color:#121212;padding :10px;}
 .bluebutton{padding:10px;}
 
-@media screen and (max-width: 481px){
+@media screen and (max-width: 600px){
   header{width:100%;background-image:url(../img/main-header_mob.jpg);background-repeat:no-repeat;background-position:center top;background-size:contain; }
   .header_top{float:left;height:126px;width:100%;}
   .lg-txt{float:right;color:#FFF;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:13px;margin-top:19px;}
