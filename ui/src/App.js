@@ -31,11 +31,12 @@ class NewsDashboard extends React.Component{
     //         return newsData.fullView;
     //    });
     getNews(newsId).then(data => {
+         window.history.pushState({page: window.title},  window.title, "./news/"+newsId); 
           let newsDataNew= data.map((news)=>{
               return Object.assign({},news,{showMainDescription:false,fullView:true})
           });
             this.setState({news:newsDataNew,readMore:false}); 
-            window.location="./news/"+newsId   
+            
        //this.setState({news:filteredNews,readMore:false}); 
        
     });
