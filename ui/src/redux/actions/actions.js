@@ -17,6 +17,12 @@ export function loadAds () {
         return res.data;
     }).catch(err=>console.log(err));
 }
+
+export function getNews (_id) {
+    return axios.get(`${url}news/${_id}`).then((res)=>{
+        return res.data
+    }).catch(err=>console.log(err))
+}
    
 export function getUser (_id) {
     return axios.get(`${url}user/${_id}`).then((res)=>{

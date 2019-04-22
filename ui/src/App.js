@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { 
-    loadNews,loadAds
+    loadNews,loadAds,getNews
 } from './redux/actions/actions'
 
 
@@ -18,26 +18,27 @@ class NewsDashboard extends React.Component{
         });
     }
     loadNewsClicked=(newsId)=> {
-         let newsNext=this.state.sideNews.map((newsData)=>{
-            if (newsData.id===newsId){
-                return Object.assign({},newsData,{fullView:true});
-            }
-            else{
-                return Object.assign({},newsData,{fullView:false});
-            }
-        });
-        // const sortedNews= newsNext.sort((a,b)=>{
-        //     if (a.sortKey < b.sortKey)
-        //         return -1;
-        //     if (a.sortKey > b.sortKey)
-        //         return 1;
-        //     return 0;
-        // });
-        const filteredNews=newsNext.filter((newsData)=>{
-            return newsData.fullView;
-       });
-       this.setState({news:filteredNews,readMore:false}); 
+    //      let newsNext=this.state.sideNews.map((newsData)=>{
+    //         if (newsData.id===newsId){
+    //             return Object.assign({},newsData,{fullView:true});
+    //         }
+    //         else{
+    //             return Object.assign({},newsData,{fullView:false});
+    //         }
+    //     });
        
+    //     const filteredNews=newsNext.filter((newsData)=>{
+    //         return newsData.fullView;
+    //    });
+    getNews(newsId).then(data => {
+          let newsDataNew= data.map((news)=>{
+              return Object.assign({},news,{showMainDescription:false,fullView:true})
+          });
+            this.setState({news:newsDataNew,readMore:false}); 
+            window.location="./news/"+newsId   
+       //this.setState({news:filteredNews,readMore:false}); 
+       
+    });
     }
      onMoreClick=(newsId)=>{
      }
@@ -345,6 +346,9 @@ showDescription=()=>{
                          <div><img alt="" className="ui fluid rounded image" src={(this.props.image) ?imageFile:''} /></div>
                          
                          <div className="newstext"> {newDescription}
+                         {/*<a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank">
+                                     Share on Facebook
+                         </a>    */}
                   </div>
                  </div>
                  </div>
